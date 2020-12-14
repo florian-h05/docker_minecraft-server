@@ -8,6 +8,7 @@
 1. [General Info](#general-info)
 2. [Technologies](#technologies)
 3. [Installation](#installation)
+4. [FAQs](#faqs)
 
 ### General Info
 ***
@@ -65,3 +66,34 @@ $ cd /path-of-your-folder or on Windows D:\\path-to-your-folder
 $ docker-compose up -d
 ```
 * **congratulations!** Now your Minecraft server should be running under the ```MC_PORT``` and you can access the web interace under http://localhost: ```RCON_WEBPORT```
+
+## FAQs
+***
+A list of frequently asked questions
+
+### How can I change the port settings?
+Change the ports in the ```.env``` file and run in your terminal:
+```
+$ cd /path-of-your-folder or on Windows D:\\path-to-your-folder
+$ docker-compose up
+```
+### How can I update the containers?
+To update your containers, run this in your terminal:
+```
+$ docker pull itzg/minecraft-server:latest
+$ docker pull itzg/rcon:latest
+$ docker container ls
+```
+Now search the names of your containers, e.g. ```mcserver_minecraft_1``` and ```mcserver_rcon_1``` . You can also delete them in the Docker Desktop app.
+```
+$ docker rm CONTAINER_1
+$ docker rm CONTAINER_2
+$ cd /path-of-your-folder or on Windows D:\\path-to-your-folder
+$ docker-compose up -d
+```
+### How to change the server's settings?
+Open your ```MC_PATH= e.g. D:\\Docker-Data\mcserver\mcserver``` folder and open ```server.properties``` with a text editor. For information about the settings, please visit [Minecraft Gamepedia (German)](https://minecraft-de.gamepedia.com/Server.properties) or [Minecraft Gamepedia (English)](https://minecraft.gamepedia.com/Server.properties).
+
+### Which command can I use in the RCON web interface?
+1. Type ```help``` in the RCON web console.
+2. Search for help on [Google](https://google.com) or visit [this website](https://www.ign.com/wikis/minecraft/Admin_and_Server_Commands).
