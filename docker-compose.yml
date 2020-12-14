@@ -1,4 +1,4 @@
-version: '3.1'
+version: '3.9'
 
 services:
   minecraft:
@@ -23,7 +23,7 @@ services:
   rcon:
     image: itzg/rcon:latest
     ports:
-      - ${RCON_PORT}:4326 
+      - ${RCON_WEBPORT}:4326 
       - ${RCON_SOCKETPORT}:4327
     volumes:
       - ${RCON_PATH}:/opt/rcon-web-admin/db
