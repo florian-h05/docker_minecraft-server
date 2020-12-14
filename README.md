@@ -97,3 +97,6 @@ Open your ```MC_PATH= e.g. D:\\Docker-Data\mcserver\mcserver``` folder and open 
 ### Which commands can I use in the RCON web interface?
 1. Type ```help``` in the RCON web console.
 2. Search for help on [Google](https://google.com) or visit [this website](https://www.ign.com/wikis/minecraft/Admin_and_Server_Commands).
+
+### How can I run multiple Minecraft Servers?
+Just follow the [Installation](#installation) documentation, but choose **other ports** and create **new, different folders**.
