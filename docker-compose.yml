@@ -35,7 +35,3 @@ services:
       RWA_RCON_HOST: minecraft # if this does not work: docker network ls; then docker network inspect NAME, then read the ip-address
       RWA_RCON_PASSWORD: ${MC_RCONPASS}
       RWA_WEBSOCKET_URL: "ws://localhost:${RCON_SOCKETPORT}"
-
-#volumes: # here your path goes
- # mcserver: ${MC_PATH}
- # rcon: ${RCON_PATH}
