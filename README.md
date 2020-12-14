@@ -64,4 +64,4 @@ RCON_PASS=admin
 $ cd /path-of-your-folder or on Windows D:\\path-to-your-folder
 $ docker-compose up -d
 ```
-* **congratulations!** Now your Minecraft server should be running under the ```MC_PORT``` and you can access the web interace under http://localhost:```RCON_WEBPORT```
+* **congratulations!** Now your Minecraft server should be running under the ```MC_PORT``` and you can access the web interace under http://localhost: ```RCON_WEBPORT```
