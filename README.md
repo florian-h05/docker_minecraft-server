@@ -12,7 +12,7 @@
 
 ### General Info
 ***
-This project uses a docker-compose.yml file and an .env file to start a Minecraft Java server in Docker with a web based managment over an RCON console.
+This project uses a docker-compose.yml file and an .env file to start a Minecraft Java server in Docker with a web based management over an RCON console.
 
 
 
@@ -52,7 +52,7 @@ RCON_PASS= password
 * example:
 ```
 MC_PORT=10001
-MC_RCONPASS=letmein
+MC_RCONPASS=password
 MC_PATH=D:\\Docker-Data\mcserver\mcserver
 RCON_PATH=D:\\Docker-Data\mcserver\rcon
 RCON_WEBPORT=11001
@@ -65,7 +65,7 @@ RCON_PASS=admin
 $ cd /path-of-your-folder or on Windows D:\\path-to-your-folder
 $ docker-compose up -d
 ```
-* **congratulations!** Now your Minecraft server should be running under the ```MC_PORT``` and you can access the web interace under http://localhost: ```RCON_WEBPORT```
+* **congratulations!** Now your Minecraft server should be running under the ```MC_PORT``` and you can access the web interface under http://localhost: ```RCON_WEBPORT```
 
 ## FAQs
 ***
