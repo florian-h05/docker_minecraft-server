@@ -5,11 +5,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - name: list folders
-        run: ls /home
       - name: create the folders
         run: mkdir /home/runner/mcserver
-      - run: mkdir /home/ubuntu/rcon
+      - run: mkdir /home/runner/rcon
       - name: Build the stack
         run: docker-compose up -d
       - name: Test Minecraft server
