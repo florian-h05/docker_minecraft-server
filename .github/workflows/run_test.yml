@@ -8,7 +8,7 @@ jobs:
       - name: list folders
         run: ls /home
       - name: create the folders
-        run: mkdir /home/ubuntu/mcserver
+        run: mkdir /home/runner/mcserver
       - run: mkdir /home/ubuntu/rcon
       - name: Build the stack
         run: docker-compose up -d
