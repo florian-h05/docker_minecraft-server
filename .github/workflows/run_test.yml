@@ -1,4 +1,4 @@
-name: Test server with docker compose
+name: Test building the server with docker compose
 on: push
 jobs:
   test:
@@ -10,7 +10,3 @@ jobs:
       - run: mkdir /home/runner/rcon
       - name: Build the stack
         run: docker-compose up -d
-      - name: Test Minecraft server
-        run: docker run --network container:docker_minecraft-server_minecraft_1 appropriate/curl -s --retry 10 --retry-connrefused http://localhost:10001/
-      - name: Test RCON web interface
-        run: docker run --network container:docker_minecraft-server_rcon_1 appropriate/curl -s --retry 10 --retry-connrefused http://localhost:11001/
