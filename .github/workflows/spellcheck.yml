@@ -9,7 +9,7 @@ on:
     branches: [ main ]
 
   # Allows you to run this workflow manually from the Actions tab
-  workflow_dispatch: check spelling
+  workflow_dispatch: Spellcheck
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
@@ -23,22 +23,8 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@master
+        name: check out code
       # Checks the spelling
       - uses: rojopolis/spellcheck-github-actions
         name: Spellcheck
-            matrix:
-            - name: Markdown
-            aspell:
-              lang: en
-            dictionary:
-              encoding: utf-8
-            pipeline:
-              - pyspelling.filters.markdown:
-              - pyspelling.filters.html:
-            comments: false
-            ignores:
-              - code
-              - pre
-            sources:
-              - '**/*.md'
-            default_encoding: utf-8
+            
