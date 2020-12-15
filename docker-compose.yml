@@ -11,15 +11,10 @@ services:
     hostname: minecraft
     environment:
       EULA: "TRUE"
-      MAX_MEMORY: 2G # this option sets the RAM limit
+      MAX_MEMORY: ${MC_MAXMEMORY} # this option sets the RAM limit
       ENABLE_RCON: "true"
       RCON_PASSWORD: ${MC_RCONPASS} # uses the password from the .env variables file
       RCON_PORT: 25575
-      #MAX_BUILD_HEIGHT: 256
-      #VIEW_DISTANCE: 15
-      #LEVEL_TYPE: LARGEBIOMES
-      #MAX_PLAYERS: 100
-      #CONSOLE: "false"
     image: itzg/minecraft-server:latest
     restart: always
   rcon:
