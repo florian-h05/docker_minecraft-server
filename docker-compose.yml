@@ -2,24 +2,20 @@ version: '3.9'
 
 services:
   minecraft:
-    env_file:
-      - docker.env
-    ports: # change the first port number -- this is your local machine port
+    ports:
       - ${MC_PORT}:25565
     volumes:
       - ${MC_PATH}:/data
     hostname: minecraft
     environment:
       EULA: "TRUE"
-      MAX_MEMORY: ${MC_MAXMEMORY} # this option sets the RAM limit
+      MAX_MEMORY: ${MC_MAXMEMORY}
       ENABLE_RCON: "true"
       RCON_PASSWORD: ${MC_RCONPASS} # uses the password from the .env variables file
       RCON_PORT: 25575
     image: itzg/minecraft-server:latest
     restart: always
   rcon:
-    env_file:
-      - docker.env
     image: itzg/rcon:latest
     ports:
       - ${RCON_WEBPORT}:4326 
