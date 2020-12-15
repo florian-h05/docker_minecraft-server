@@ -41,6 +41,7 @@ A little intro about the installation.
 MC_PORT= Minecraft server port, e.g. 10001
 MC_RCONPASS= password
 MC_PATH= e.g. D:\\Docker-Data\mcserver\mcserver
+MC_MAXMEMORY= memory usage limit, e.g. 2G for 2 gigabytes
 RCON_PATH= e.g. D:\\Docker-Data\mcserver\rcon
 RCON_WEBPORT= RCON web interface port, e.g. 11001
 RCON_SOCKETPORT= RCON web interface socket port, e.g. 12001
@@ -53,6 +54,7 @@ RCON_PASS= password
 ```
 MC_PORT=10001
 MC_RCONPASS=password
+MC_MAXMEMORY=2G
 MC_PATH=D:\\Docker-Data\mcserver\mcserver
 RCON_PATH=D:\\Docker-Data\mcserver\rcon
 RCON_WEBPORT=11001
