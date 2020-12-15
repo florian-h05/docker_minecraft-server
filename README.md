@@ -12,7 +12,7 @@
 
 ### General Info
 ***
-This project uses a docker-compose.yml file and an .env file to start a Minecraft Java server in Docker with a web based management over an RCON console.
+This project uses a docker-compose.yml file and an docker.env file to start a Minecraft Java server in Docker with a web based management over an RCON console.
 
 
 
@@ -34,7 +34,7 @@ A little intro about the installation.
 * create a folder
 * create a ```minecraft``` and a ```rcon``` folder inside this folder
 * find out the paths, e.g. on Windows ```D:\\Docker-Data\mcserver\minecraft``` and ```D:\\Docker-Data\mcserver\rcon```
-* download the ```docker-compose.yml``` and the ```.env``` files
+* download the ```docker-compose.yml``` and the ```docker.env``` files
 * paste the minecraft path and the rcon path behind ```MC_PATH``` and ```RCON_PATH```
 
 ```
@@ -72,7 +72,7 @@ $ docker-compose up -d
 A list of frequently asked questions
 
 ### How can I change the port settings?
-Change the ports in the ```.env``` file and run in your terminal:
+Change the ports in the ```docker.env``` file and run in your terminal:
 ```
 $ cd /path-of-your-folder or on Windows D:\\path-to-your-folder
 $ docker-compose up
