@@ -11,6 +11,6 @@ jobs:
       - name: Build the stack
         run: docker-compose up -d
       - name: Test Minecraft server
-        run: docker run --network container:minecraft1_minecraft_1 appropriate/curl -s --retry 10 --retry-connrefused http://localhost:10001/
+        run: docker run --network container:docker_minecraft-server_minecraft_1 appropriate/curl -s --retry 10 --retry-connrefused http://localhost:10001/
       - name: Test RCON web interface
-        run: docker run --network container:minecraft1_rcon_1 appropriate/curl -s --retry 10 --retry-connrefused http://localhost:11001/
+        run: docker run --network container:docker_minecraft-server_rcon_1 appropriate/curl -s --retry 10 --retry-connrefused http://localhost:11001/
