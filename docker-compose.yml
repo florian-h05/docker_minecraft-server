@@ -2,8 +2,6 @@ version: '3.9'
 
 services:
   minecraft:
-    env_file:
-      - docker.env
     ports: # change the first port number -- this is your local machine port
       - ${MC_PORT}:25565
     volumes:
@@ -18,8 +16,6 @@ services:
     image: itzg/minecraft-server:latest
     restart: always
   rcon:
-    env_file:
-      - docker.env
     image: itzg/rcon:latest
     ports:
       - ${RCON_WEBPORT}:4326 
