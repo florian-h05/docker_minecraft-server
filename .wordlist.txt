@@ -15,3 +15,5 @@ http
 https
 localhost
 yml
+Gamepedia
+PowerShell
