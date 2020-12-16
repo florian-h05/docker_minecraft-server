@@ -1,5 +1,13 @@
 name: Test building the server with docker compose
-on: push
+on: 
+  push:
+    paths:
+    - '.env'
+    - 'docker-compose.yml'
+  pull_request:
+    branches:
+      - main
+
 jobs:
   test:
     runs-on: ubuntu-latest
