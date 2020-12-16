@@ -36,7 +36,7 @@ A little intro about the installation.
 * find out the paths, e.g. on Windows ```D:\\Docker-Data\mcserver\minecraft``` and ```D:\\Docker-Data\mcserver\rcon```
 * download the ```docker-compose.yml``` and the ```.env``` files
 * paste the minecraft path and the rcon path behind ```MC_PATH``` and ```RCON_PATH```
-* for more information about Minecraft server types, visit: [itzg/minecraft-server README](https://github.com/itzg/docker-minecraft-server#readme)
+* for more information about Minecraft server types, visit: [itzg/minecraft-server documentation](https://github.com/itzg/docker-minecraft-server#readme)
 
 ```
 MC_PORT= Minecraft server port, e.g. 10001
