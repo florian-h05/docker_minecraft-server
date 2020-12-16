@@ -13,7 +13,7 @@ services:
       ENABLE_RCON: "true"
       RCON_PASSWORD: ${MC_RCONPASS} # uses the password from the .env variables file
       RCON_PORT: 25575
-      TYPE: {MC_TYPE}
+      TYPE: ${MC_TYPE}
     image: itzg/minecraft-server:latest
     restart: always
   rcon:
