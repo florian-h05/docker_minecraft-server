@@ -36,12 +36,14 @@ A little intro about the installation.
 * find out the paths, e.g. on Windows ```D:\\Docker-Data\mcserver\minecraft``` and ```D:\\Docker-Data\mcserver\rcon```
 * download the ```docker-compose.yml``` and the ```.env``` files
 * paste the minecraft path and the rcon path behind ```MC_PATH``` and ```RCON_PATH```
+* for more information about Minecraft server types, visit: [itzg/minecraft-server README](https://github.com/itzg/docker-minecraft-server#readme)
 
 ```
 MC_PORT= Minecraft server port, e.g. 10001
 MC_RCONPASS= password
-MC_PATH= e.g. D:\\Docker-Data\mcserver\mcserver
 MC_MAXMEMORY= memory usage limit, e.g. 2G for 2 gigabytes
+MC_PATH= e.g. D:\\Docker-Data\mcserver\mcserver
+MC_TYPE= Server Type, e.g. PAPER
 RCON_PATH= e.g. D:\\Docker-Data\mcserver\rcon
 RCON_WEBPORT= RCON web interface port, e.g. 11001
 RCON_SOCKETPORT= RCON web interface socket port, e.g. 12001
@@ -56,6 +58,7 @@ MC_PORT=10001
 MC_RCONPASS=password
 MC_MAXMEMORY=2G
 MC_PATH=D:\\Docker-Data\mcserver\mcserver
+MC_TYPE=PAPER
 RCON_PATH=D:\\Docker-Data\mcserver\rcon
 RCON_WEBPORT=11001
 RCON_SOCKETPORT=12001
@@ -82,7 +85,7 @@ $ docker-compose up
 ### How can I update the containers?
 To update your containers, run this in your terminal:
 ```
-$ docker pull itzg/minecraft-server:latest
+$ docker pull itzg/minecraft-server:adopt14
 $ docker pull itzg/rcon:latest
 $ docker container ls
 ```
