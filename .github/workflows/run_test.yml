@@ -1,4 +1,4 @@
-name: Test building the server with docker compose
+name: Ping the server stack
 on: 
   push:
     paths:
@@ -9,7 +9,7 @@ on:
       - main
 
 jobs:
-  test:
+  ping_server:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -17,7 +17,7 @@ jobs:
       - run: mkdir /home/runner/rcon
       - name: Build the stack
         run: docker-compose up -d
-      - name: Sleep for 30 seconds
+      - name: Sleep for 20 seconds
         uses: jakejarvis/wait-action@master
         with:
           time: '20s'
