@@ -20,9 +20,9 @@ jobs:
       - name: Sleep for 30 seconds
         uses: jakejarvis/wait-action@master
         with:
-          time: '30s'
+          time: '20s'
       - name: ping the Minecraft server
-        run: nc -vz localhost 10001
+        run: nc -vz localhost 14001
       - name: ping the RCON web interface
         run: nc -vz localhost 11001
       - name: ping the RCON web socket
