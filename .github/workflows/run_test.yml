@@ -13,7 +13,8 @@ jobs:
     runs-on: ubuntu-20.04
     steps:
       - uses: actions/checkout@v2
-      - run: mkdir /home/runner/mcserver
+      - run: mkdir /home/runner/mcserver1
+      - run: mkdir /home/runner/mcserver2
       - run: mkdir /home/runner/rcon
       - name: Build the stack
         run: docker-compose up -d
@@ -21,8 +22,10 @@ jobs:
         uses: jakejarvis/wait-action@master
         with:
           time: '20s'
-      - name: ping the Minecraft server
+      - name: ping the Minecraft server number 1
         run: nc -vz localhost 10001
+      - name: ping the Minecraft server number 2
+        run: nc -vz localhost 10002
       - name: ping the RCON web interface
         run: nc -vz localhost 11001
       - name: ping the RCON web socket

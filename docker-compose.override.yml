@@ -1,0 +1,18 @@
+version: '3.9'
+
+services:
+  minecraft2:  # replace this number with your server number
+    ports:
+      - ${MC_PORT2}:25565
+    volumes:
+      - ${MC_PATH2}:/data
+    hostname: ${HOSTNAME2}
+    environment:
+      EULA: "TRUE"
+      MAX_MEMORY: ${MC_MAXMEMORY2}
+      ENABLE_RCON: "true"
+      RCON_PASSWORD: ${MC_RCONPASS2} # uses the password from the .env variables file
+      RCON_PORT: ${MC_RCON_PORT2}
+      TYPE: ${MC_TYPE2}
+    image: itzg/minecraft-server:adopt14
+    restart: always
