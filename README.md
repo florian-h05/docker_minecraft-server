@@ -32,32 +32,33 @@ Following prerequisites have to be met:
 
 A little intro about the installation. 
 * create a folder
-* create a ```mcserver``` and a ```rcon``` folder inside this folder
+* create a ```mcserver1``` and a ```rcon``` folder inside this folder
 * download the ```docker-compose.yml``` and the ```.env``` files
-* paste the minecraft path and the rcon path behind ```MC_PATH``` and ```RCON_PATH```
+* **do not** download the ```docker-compose.override.yml```
 * for more information about Minecraft server types, visit: [itzg/minecraft-server documentation](https://github.com/itzg/docker-minecraft-server#readme)
 
 ```
-MC_PORT= Minecraft server port, e.g. 10001
+MC_PORT=                Minecraft server port, e.g. 10001
 MC_RCONPASS= password
-MC_MAXMEMORY= memory usage limit, e.g. 2G for 2 gigabytes
-MC_PATH=./mcserver
-MC_TYPE= Server Type, e.g. PAPER
-MC_RCON_PORT=25575 no change needed when running only one Minecraft server
+MC_MAXMEMORY=           memory usage limit, e.g. 2G for 2 gigabytes
+MC_PATH=./mcserver1
+MC_TYPE=                Server Type, e.g. PAPER
+MC_RCON_PORT=25575      no change needed when running only one Minecraft server
 RCON_PATH=./rcon
-RCON_WEBPORT= RCON web interface port, e.g. 11001
-RCON_SOCKETPORT= RCON web interface socket port, e.g. 12001
+RCON_WEBPORT=           RCON web interface port, e.g. 11001
+RCON_SOCKETPORT=        RCON web interface socket port, e.g. 12001
 RCON_USER= username
 RCON_PASS= password
 ```
 * when selecting your ports, **do not** use common ports, e.g. 80 HTTP or 443 HTTPS
+* ignore the rest of the ```.env``` file which is not shown here
 * after filling in your data, you **must not leave a blank** after the ```=``` sign
 * example:
 ```
 MC_PORT=10001
 MC_RCONPASS=password
 MC_MAXMEMORY=2G
-MC_PATH=./mcserver
+MC_PATH=./mcserver1
 MC_TYPE=PAPER
 MC_RCON_PORT=25575
 RCON_PATH=./rcon
@@ -71,7 +72,43 @@ RCON_PASS=admin
 $ cd /path-of-your-folder or on Windows D:\\path-to-your-folder
 $ docker-compose up -d
 ```
-* **congratulations!** Now your Minecraft server should be running under the ```MC_PORT``` and you can access the web interface under http://localhost: ```RCON_WEBPORT```
+* **congratulations!** Now your Minecraft server should be running under the ```MC_PORT``` and you can access the web interface under http://localhost:```RCON_WEBPORT```
+
+### Install multiple servers
+***
+
+* Follow the steps above, but
+* additionally create a ```mcserver2``` folder -- replace the number with the server number
+* download the ```docker-compose.override.yml```
+* now the rest of the ```.env``` file is important:
+```
+# for adding more servers -- docker-compose.override.yml is needed
+
+MC_PORT2=10002          increase the port number with the server number
+MC_RCONPASS2=letmein
+MC_MAXMEMORY2=2G
+MC_PATH2=./mcserver2    replace the number with the server number
+MC_TYPE2=PAPER
+MC_RCON_PORT2=25576     increase the port number with the server number
+HOSTNAME2=minecraft2    replace the number with the server number
+```
+* change the ports and the paths according to your server number!!
+* if this is not your second server, but your third... , you also need to replace the number at the end of the service name in ```docker-compose.override.yml```
+```
+version: '3.9'
+
+services:
+  minecraft2: # replace this number with your server number
+    ports:
+    ...
+```
+* when you have prepared all files, log in to your console:
+```
+$ cd /path-of-your-folder or on Windows D:\\path-to-your-folder
+$ docker-compose up -d
+```
+* **congratulations!** Now your second or third... Minecraft server should be running
+* add the server to the rcon web interface with the hostname set in the ```.env``` file
 
 ## FAQs
 ***
