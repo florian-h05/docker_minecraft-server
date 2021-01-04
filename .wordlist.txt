@@ -18,3 +18,6 @@ localhost
 yml
 Gamepedia
 PowerShell
+letmein
+HOSTNAME
+hostname
