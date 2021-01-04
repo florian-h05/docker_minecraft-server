@@ -12,7 +12,7 @@ services:
       MAX_MEMORY: ${MC_MAXMEMORY}
       ENABLE_RCON: "true"
       RCON_PASSWORD: ${MC_RCONPASS} # uses the password from the .env variables file
-      RCON_PORT: 25575
+      RCON_PORT: ${MC_RCON_PORT}
       TYPE: ${MC_TYPE}
     image: itzg/minecraft-server:adopt14
     restart: always
@@ -24,7 +24,7 @@ services:
     volumes:
       - ${RCON_PATH}:/opt/rcon-web-admin/db
     environment:
-      RWA_RCON_PORT: 25575
+      RWA_RCON_PORT: ${MC_RCON_PORT}
       RWA_USERNAME: ${RCON_USER}
       RWA_PASSWORD: ${RCON_PASS}
       RWA_ADMIN: "TRUE"

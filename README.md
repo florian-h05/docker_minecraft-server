@@ -32,8 +32,7 @@ Following prerequisites have to be met:
 
 A little intro about the installation. 
 * create a folder
-* create a ```minecraft``` and a ```rcon``` folder inside this folder
-* find out the paths, e.g. on Windows ```D:\\Docker-Data\mcserver\minecraft``` and ```D:\\Docker-Data\mcserver\rcon```
+* create a ```mcserver``` and a ```rcon``` folder inside this folder
 * download the ```docker-compose.yml``` and the ```.env``` files
 * paste the minecraft path and the rcon path behind ```MC_PATH``` and ```RCON_PATH```
 * for more information about Minecraft server types, visit: [itzg/minecraft-server documentation](https://github.com/itzg/docker-minecraft-server#readme)
@@ -42,9 +41,10 @@ A little intro about the installation.
 MC_PORT= Minecraft server port, e.g. 10001
 MC_RCONPASS= password
 MC_MAXMEMORY= memory usage limit, e.g. 2G for 2 gigabytes
-MC_PATH= e.g. D:\\Docker-Data\mcserver\mcserver
+MC_PATH=./mcserver
 MC_TYPE= Server Type, e.g. PAPER
-RCON_PATH= e.g. D:\\Docker-Data\mcserver\rcon
+MC_RCON_PORT=25575 no change needed when running only one Minecraft server
+RCON_PATH=./rcon
 RCON_WEBPORT= RCON web interface port, e.g. 11001
 RCON_SOCKETPORT= RCON web interface socket port, e.g. 12001
 RCON_USER= username
@@ -57,9 +57,10 @@ RCON_PASS= password
 MC_PORT=10001
 MC_RCONPASS=password
 MC_MAXMEMORY=2G
-MC_PATH=D:\\Docker-Data\mcserver\mcserver
+MC_PATH=./mcserver
 MC_TYPE=PAPER
-RCON_PATH=D:\\Docker-Data\mcserver\rcon
+MC_RCON_PORT=25575
+RCON_PATH=./rcon
 RCON_WEBPORT=11001
 RCON_SOCKETPORT=12001
 RCON_USER=admin
