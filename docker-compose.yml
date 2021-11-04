@@ -5,7 +5,7 @@ services:
     ports:
       - ${MC_PORT}:25565
     volumes:
-      - ${MC_PATH}:/data
+      - ./mcserver1:/data
     hostname: minecraft1
     environment:
       EULA: "TRUE"
@@ -14,15 +14,15 @@ services:
       RCON_PASSWORD: ${MC_RCONPASS} # uses the password from the .env variables file
       RCON_PORT: ${MC_RCON_PORT}
       TYPE: ${MC_TYPE}
-    image: itzg/minecraft-server:adopt14
-    restart: always
+    image: itzg/minecraft-server:latest
+    restart: unless-stopped
   rcon:
     image: itzg/rcon:latest
     ports:
       - ${RCON_WEBPORT}:4326 
       - ${RCON_SOCKETPORT}:4327
     volumes:
-      - ${RCON_PATH}:/opt/rcon-web-admin/db
+      - ./rcon:/opt/rcon-web-admin/db
     environment:
       RWA_RCON_PORT: ${MC_RCON_PORT}
       RWA_USERNAME: ${RCON_USER}
@@ -31,3 +31,4 @@ services:
       RWA_RCON_HOST: minecraft1 # if this does not work: docker network ls; then docker network inspect NAME, then read the ip-address
       RWA_RCON_PASSWORD: ${MC_RCONPASS}
       RWA_WEBSOCKET_URL: "ws://localhost:${RCON_SOCKETPORT}"
+    restart: unless-stopped

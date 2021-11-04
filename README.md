@@ -41,10 +41,8 @@ A little intro about the installation.
 MC_PORT=                Minecraft server port, e.g. 10001
 MC_RCONPASS= password
 MC_MAXMEMORY=           memory usage limit, e.g. 2G for 2 gigabytes
-MC_PATH=./mcserver1
 MC_TYPE=                Server Type, e.g. PAPER
 MC_RCON_PORT=25575      no change needed when running only one Minecraft server
-RCON_PATH=./rcon
 RCON_WEBPORT=           RCON web interface port, e.g. 11001
 RCON_SOCKETPORT=        RCON web interface socket port, e.g. 12001
 RCON_USER= username
@@ -58,10 +56,8 @@ RCON_PASS= password
 MC_PORT=10001
 MC_RCONPASS=password
 MC_MAXMEMORY=2G
-MC_PATH=./mcserver1
 MC_TYPE=PAPER
 MC_RCON_PORT=25575
-RCON_PATH=./rcon
 RCON_WEBPORT=11001
 RCON_SOCKETPORT=12001
 RCON_USER=admin
@@ -87,10 +83,8 @@ $ docker-compose up -d
 MC_PORT2=10002          increase the port number with the server number
 MC_RCONPASS2=letmein
 MC_MAXMEMORY2=2G
-MC_PATH2=./mcserver2    replace the number with the server number
 MC_TYPE2=PAPER
 MC_RCON_PORT2=25576     increase the port number with the server number
-HOSTNAME2=minecraft2    replace the number with the server number
 ```
 * change the ports and the paths according to your server number!!
 * if this is not your second server, but your third... , you also need to replace the number at the end of the service name in ```docker-compose.override.yml```
@@ -135,7 +129,7 @@ $ cd /path-of-your-folder or on Windows D:\\path-to-your-folder
 $ docker-compose up -d
 ```
 ### How to change the server's settings?
-Open your ```MC_PATH= e.g. D:\\Docker-Data\mcserver\mcserver``` folder and open ```server.properties``` with a text editor. For information about the settings, please visit [Minecraft Gamepedia (German)](https://minecraft-de.gamepedia.com/Server.properties) or [Minecraft Gamepedia (English)](https://minecraft.gamepedia.com/Server.properties).
+Open your path e.g. ```D:\\Docker-Data\mcserver\mcserver1``` folder and open ```server.properties``` with a text editor. For information about the settings, please visit [Minecraft Gamepedia (German)](https://minecraft-de.gamepedia.com/Server.properties) or [Minecraft Gamepedia (English)](https://minecraft.gamepedia.com/Server.properties).
 
 
 ### Which commands can I use in the RCON web interface?

@@ -5,8 +5,8 @@ services:
     ports:
       - ${MC_PORT2}:25565
     volumes:
-      - ${MC_PATH2}:/data
-    hostname: ${HOSTNAME2}
+      - ./minecraft2:/data # replace number with serber number
+    hostname: minecraft2
     environment:
       EULA: "TRUE"
       MAX_MEMORY: ${MC_MAXMEMORY2}
@@ -14,5 +14,5 @@ services:
       RCON_PASSWORD: ${MC_RCONPASS2} # uses the password from the .env variables file
       RCON_PORT: ${MC_RCON_PORT2}
       TYPE: ${MC_TYPE2}
-    image: itzg/minecraft-server:adopt14
-    restart: always
+    image: itzg/minecraft-server:latest
+    restart: unless-stopped
